@@ -20,7 +20,7 @@ class ControllerPostsBlog extends ChangeNotifier {
 
       final res = await dio.get('/posts');
       if (res.data['success'] == true) {
-        if (_postsBlog == null) _postsBlog = [];
+        _postsBlog = [];
 
         res.data['data'].forEach((e) {
           _postsBlog.add(ModelPost.fromJson(e));
