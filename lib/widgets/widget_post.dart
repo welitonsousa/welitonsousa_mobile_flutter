@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:syntax_highlighter/syntax_highlighter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class WidgetsPost {
   static Widget text(String label,
@@ -15,6 +16,14 @@ class WidgetsPost {
         style: TextStyle(fontSize: size),
       ),
     );
+  }
+
+  static Widget link(title, link) {
+    return TextButton(
+        onPressed: () async {
+          await launch(link);
+        },
+        child: Text(title));
   }
 
   static fullCode(code, context) {

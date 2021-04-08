@@ -82,6 +82,11 @@ class _PagePostState extends State<PagePost> {
                 post.data.imageExample != ""
             ? WidgetsPost.image(post.data.imageExample)
             : Container(),
+        index + 1 == post.data.fullDescription.length &&
+                post.data.repo.link != null &&
+                post.data.repo.link != ""
+            ? WidgetsPost.link(post.data.repo.title, post.data.repo.link)
+            : Container(),
       ],
     );
   }
