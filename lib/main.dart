@@ -14,7 +14,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    OneSignal.shared.init(env.firebaseKey);
+    OneSignal.shared.init(env.fireKey);
     OneSignal.shared.setInFocusDisplayType(OSNotificationDisplayType.none);
     OneSignal.shared.setNotificationReceivedHandler((notification) {
       OSNotification a = notification;

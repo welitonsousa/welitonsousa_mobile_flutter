@@ -39,7 +39,7 @@ android {
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        manifestPlaceholders = [onesignal_app_id: "f197fd29-103c-47cf-bd94-521fad564150",
+        manifestPlaceholders = [onesignal_app_id: "YOUR KEY NOTIFICATION",
                                 onesignal_google_project_number: "REMOTE"]
     }
 
