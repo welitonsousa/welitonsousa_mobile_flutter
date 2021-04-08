@@ -37,6 +37,7 @@ class PagePostsBlog extends StatelessWidget {
     }
 
     return RefreshIndicator(
+      key: ControllerPostsBlog.instance.refreshKey,
       onRefresh: ControllerPostsBlog.instance.getPostsBlog,
       child: ListView.builder(
         itemCount: counterPosts,

@@ -21,10 +21,10 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
-
 android {
     compileSdkVersion 30
 
@@ -39,6 +39,8 @@ android {
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        manifestPlaceholders = [onesignal_app_id: "f197fd29-103c-47cf-bd94-521fad564150",
+                                onesignal_google_project_number: "REMOTE"]
     }
 
     buildTypes {

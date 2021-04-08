@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.welitonsousa_mobile">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
    <application
         android:label="welitonsousa_mobile"
         android:icon="@mipmap/ic_launcher">

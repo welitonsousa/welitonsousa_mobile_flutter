@@ -1,14 +1,18 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import '../helper/helper_dio_config.dart';
 import '../models/model_posts_blog.dart';
 
 class ControllerPostsBlog extends ChangeNotifier {
   static final ControllerPostsBlog instance = ControllerPostsBlog();
+  GlobalKey<RefreshIndicatorState> _refreshKey =
+      GlobalKey<RefreshIndicatorState>();
 
   List<ModelPost> _postsBlog;
   bool _isLoading = false;
   bool _error = false;
 
+  GlobalKey<RefreshIndicatorState> get refreshKey => _refreshKey;
   bool get error => _error;
   bool get isLoading => _isLoading;
   List<ModelPost> get postsBlog => _postsBlog;
