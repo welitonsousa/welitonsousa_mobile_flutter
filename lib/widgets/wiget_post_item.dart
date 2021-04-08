@@ -13,7 +13,7 @@ class Post {
       leading: Container(
         width: 100,
         height: 50,
-        child: Image.network(image),
+        child: Container(color: Colors.white, child: Image.network(image)),
       ),
       onTap: onTap,
     );

@@ -85,13 +85,16 @@ class FullDescription {
   String title;
   String code;
   String lang;
+  String image;
 
-  FullDescription({this.description, this.title, this.code, this.lang});
+  FullDescription(
+      {this.description, this.title, this.code, this.lang, this.image});
 
   FullDescription.fromJson(Map<String, dynamic> json) {
     description = json['description'] ?? null;
     title = json['title'] ?? null;
     code = json['code'] ?? null;
     lang = json['lang'] ?? null;
+    image = json['image'] ?? null;
   }
 }

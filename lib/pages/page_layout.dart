@@ -14,7 +14,6 @@ class _PageLayoutState extends State<PageLayout> {
     return AnimatedBuilder(
       animation: ControllerLayout.instance,
       builder: (BuildContext context, Widget child) {
-        //return Text('blog');
         return Scaffold(
           body: _body(),
           bottomNavigationBar: _bottomNavyBar(),

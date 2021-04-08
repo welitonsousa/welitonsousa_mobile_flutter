@@ -47,7 +47,8 @@ class PagePostsBlog extends StatelessWidget {
             subtitle: posts[index].data.smallDescription,
             image: posts[index].data.image,
             onTap: () {
-              print(posts[index].id);
+              Navigator.pushNamed(context, 'post',
+                  arguments: {"post": posts[index]});
             },
           );
         },
@@ -88,8 +89,8 @@ class PagePostsBlog extends StatelessWidget {
               subtitle: element.data.smallDescription,
               image: element.data.image,
               onTap: () {
-                Navigator.pop(context);
-                print(element.id);
+                Navigator.popAndPushNamed(context, 'post',
+                    arguments: {"post": element});
               },
             ),
           ),
