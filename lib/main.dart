@@ -4,6 +4,7 @@ import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:welitonsousa_mobile/controllers/controller_posts_blog.dart';
 import 'package:welitonsousa_mobile/controllers/controller_theme.dart';
 import 'package:welitonsousa_mobile/env.dart';
+import 'package:welitonsousa_mobile/pages/paga_splash.dart';
 import 'package:welitonsousa_mobile/pages/page_layout.dart';
 import 'package:welitonsousa_mobile/pages/page_post.dart';
 import 'package:welitonsousa_mobile/widgets/widget_snack_bar.dart';
@@ -48,14 +49,15 @@ class _MyAppState extends State<MyApp> {
           title: env.title,
           debugShowCheckedModeBanner: env.showBanner,
           theme: _controllerTheme(),
-          initialRoute: 'layout',
           builder: (BuildContext context, Widget child) {
             return Scaffold(
               key: CustomSnackBar.instance.key,
               body: child,
             );
           },
+          initialRoute: 'splash',
           routes: {
+            'splash': (BuildContext context) => PageSplash(),
             'layout': (BuildContext context) => PageLayout(),
             'post': (BuildContext context, {post}) => PagePost(),
           },
