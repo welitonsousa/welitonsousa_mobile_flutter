@@ -1,5 +1,6 @@
 import 'package:welitonsousa_mobile/controllers/controller_posts_blog.dart';
 import 'package:welitonsousa_mobile/models/model_posts_blog.dart';
+import 'package:welitonsousa_mobile/pages/page_drawer.dart';
 import 'package:welitonsousa_mobile/widgets/widget_loading.dart';
 import 'package:welitonsousa_mobile/widgets/wiget_post_item.dart';
 import 'package:searchable_dropdown/searchable_dropdown.dart';
@@ -14,6 +15,7 @@ class PagePostsBlog extends StatelessWidget {
         return Scaffold(
           appBar: _appBar(context),
           body: _body(),
+          drawer: PageDrawer(),
         );
       },
     );
