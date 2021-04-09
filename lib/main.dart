@@ -39,9 +39,6 @@ class _MyAppState extends State<MyApp> {
     OneSignal.shared.setNotificationOpenedHandler((openedResult) {
       openNotification(openedResult.notification);
     });
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: ThemeData.dark().primaryColor,
-    ));
     return AnimatedBuilder(
       animation: ControllerTheme.instance,
       builder: (BuildContext context, Widget child) {
