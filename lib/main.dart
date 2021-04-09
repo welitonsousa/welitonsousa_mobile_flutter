@@ -33,12 +33,11 @@ class _MyAppState extends State<MyApp> {
     OneSignal.shared.init(env.fireKey);
     OneSignal.shared.setInFocusDisplayType(OSNotificationDisplayType.none);
     OneSignal.shared.setNotificationReceivedHandler((notification) {
-      OSNotification a = notification;
-      String title = a.payload.title;
-      CustomSnackBar.instance.success(text: title);
-      ControllerPostsBlog.instance.refreshKey.currentState.show();
+      openNotification(notification);
     });
-
+    OneSignal.shared.setNotificationOpenedHandler((openedResult) {
+      openNotification(openedResult.notification);
+    });
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: ThemeData.dark().primaryColor,
     ));
@@ -69,5 +68,11 @@ class _MyAppState extends State<MyApp> {
     return ControllerTheme.instance.theme
         ? ThemeData.dark()
         : ThemeData.light();
+  }
+
+  openNotification(OSNotification notification) {
+    String title = notification.payload.title;
+    CustomSnackBar.instance.success(text: title);
+    ControllerPostsBlog.instance.refreshKey.currentState.show();
   }
 }
