@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:welitonsousa_mobile/controllers/controller_posts_blog.dart';
 import 'package:welitonsousa_mobile/controllers/controller_theme.dart';

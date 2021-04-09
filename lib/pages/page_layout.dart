@@ -1,8 +1,8 @@
 import 'package:welitonsousa_mobile/controllers/controller_layout.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:welitonsousa_mobile/pages/page_about.dart';
 import 'package:welitonsousa_mobile/pages/page_posts_blog.dart';
-import 'package:welitonsousa_mobile/widgets/widget_snack_bar.dart';
 
 class PageLayout extends StatefulWidget {
   @override
@@ -29,7 +29,10 @@ class _PageLayoutState extends State<PageLayout> {
         controller: ControllerLayout.instance.pageController,
         onPageChanged: (index) =>
             ControllerLayout.instance.setIndexPage(newPage: index),
-        children: <Widget>[PagePostsBlog(), Container(color: Colors.blue)],
+        children: <Widget>[
+          PagePostsBlog(),
+          PageAbout(),
+        ],
       ),
     );
   }
