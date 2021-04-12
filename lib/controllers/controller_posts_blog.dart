@@ -20,7 +20,6 @@ class ControllerPostsBlog extends ChangeNotifier {
     try {
       _isLoading = true;
       notifyListeners();
-      await Future.delayed(Duration(seconds: 5));
       final res = await dio.get('/activities/posts');
       if (res.data['success'] == true) {
         _postsBlog = [];

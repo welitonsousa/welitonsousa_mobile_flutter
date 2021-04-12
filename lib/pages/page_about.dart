@@ -50,8 +50,8 @@ class PageAbout extends StatelessWidget {
               Text('Weliton Sousa', style: TextStyle(fontSize: 20)),
               Container(height: 20),
               card(children: items(profile.formation), title: 'Formações'),
-              card(children: items(profile.softSkills), title: 'SoftSkills'),
               card(children: items(profile.about), title: 'Vivencias'),
+              card(children: items(profile.softSkills), title: 'SoftSkills'),
               ListTile(
                 title: Text('HardSkills'),
                 trailing: Icon(Icons.keyboard_arrow_down),

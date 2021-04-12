@@ -35,9 +35,7 @@ class _MyAppState extends State<MyApp> {
     OneSignal.shared.setNotificationReceivedHandler((notification) {
       openNotification(notification);
     });
-    OneSignal.shared.setNotificationOpenedHandler((openedResult) {
-      openNotification(openedResult.notification);
-    });
+
     return AnimatedBuilder(
       animation: ControllerTheme.instance,
       builder: (BuildContext context, Widget child) {
