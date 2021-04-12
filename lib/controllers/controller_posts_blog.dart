@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:welitonsousa_mobile/widgets/widget_snack_bar.dart';
 import '../helper/helper_dio_config.dart';
 import '../models/model_posts_blog.dart';
 
@@ -10,10 +11,8 @@ class ControllerPostsBlog extends ChangeNotifier {
 
   List<ModelPost> _postsBlog;
   bool _isLoading = false;
-  bool _error = false;
 
   GlobalKey<RefreshIndicatorState> get refreshKey => _refreshKey;
-  bool get error => _error;
   bool get isLoading => _isLoading;
   List<ModelPost> get postsBlog => _postsBlog;
 
@@ -21,8 +20,7 @@ class ControllerPostsBlog extends ChangeNotifier {
     try {
       _isLoading = true;
       notifyListeners();
-
-      final res = await dio.get('/posts');
+      final res = await dio.get('/activities/posts');
       if (res.data['success'] == true) {
         _postsBlog = [];
 
@@ -30,9 +28,13 @@ class ControllerPostsBlog extends ChangeNotifier {
           _postsBlog.add(ModelPost.fromJson(e));
         });
       }
-      _error = false;
     } catch (error) {
       _postsBlog = _postsBlog != null ? _postsBlog : [];
+      CustomSnackBar.instance.error(
+        text: 'Algo deu errado',
+        action: getPostsBlog,
+        labelAction: "tentar novamente",
+      );
     } finally {
       _isLoading = false;
       notifyListeners();

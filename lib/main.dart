@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'package:welitonsousa_mobile/controllers/controller_posts_blog.dart';
 import 'package:welitonsousa_mobile/controllers/controller_theme.dart';
@@ -36,9 +35,7 @@ class _MyAppState extends State<MyApp> {
     OneSignal.shared.setNotificationReceivedHandler((notification) {
       openNotification(notification);
     });
-    OneSignal.shared.setNotificationOpenedHandler((openedResult) {
-      openNotification(openedResult.notification);
-    });
+
     return AnimatedBuilder(
       animation: ControllerTheme.instance,
       builder: (BuildContext context, Widget child) {

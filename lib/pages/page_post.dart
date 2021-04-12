@@ -1,4 +1,5 @@
 import 'package:welitonsousa_mobile/models/model_posts_blog.dart';
+import 'package:welitonsousa_mobile/widgets/widget_app_bar.dart';
 import 'package:welitonsousa_mobile/widgets/widget_post.dart';
 import 'package:flutter/material.dart';
 
@@ -15,16 +16,17 @@ class _PagePostState extends State<PagePost> {
 
     return Scaffold(
       body: _body(post: post),
-      appBar: _appBar(post.data.title),
+      appBar: CustomAppBar.material(title: post.data.title, context: context),
+      //appBar: _appBar(),
     );
   }
 
-  Widget _appBar(String title) {
+/*   Widget _appBar(String title) {
     return AppBar(
       title: Text(title),
       centerTitle: true,
     );
-  }
+  } */
 
   Widget _body({ModelPost post}) {
     return ListView.builder(
