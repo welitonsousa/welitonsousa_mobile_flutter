@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    OneSignal.shared.init(env.fireKey);
+    OneSignal.shared.init(Env.fireKey);
     OneSignal.shared.setInFocusDisplayType(OSNotificationDisplayType.none);
     OneSignal.shared.setNotificationReceivedHandler((notification) {
       openNotification(notification);
@@ -40,8 +40,8 @@ class _MyAppState extends State<MyApp> {
       animation: ControllerTheme.instance,
       builder: (BuildContext context, Widget child) {
         return MaterialApp(
-          title: env.title,
-          debugShowCheckedModeBanner: env.showBanner,
+          title: Env.title,
+          debugShowCheckedModeBanner: Env.showBanner,
           theme: _controllerTheme(),
           builder: (BuildContext context, Widget child) {
             return Scaffold(

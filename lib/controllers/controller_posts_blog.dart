@@ -29,6 +29,7 @@ class ControllerPostsBlog extends ChangeNotifier {
         });
       }
     } catch (error) {
+      print(error);
       _postsBlog = _postsBlog != null ? _postsBlog : [];
       CustomSnackBar.instance.error(
         text: 'Algo deu errado',

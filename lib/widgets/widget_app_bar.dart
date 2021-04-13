@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:searchable_dropdown/searchable_dropdown.dart';
 import 'package:welitonsousa_mobile/controllers/controller_posts_blog.dart';
 import 'package:welitonsousa_mobile/models/model_posts_blog.dart';
-import 'package:welitonsousa_mobile/widgets/widget_snack_bar.dart';
 import 'package:welitonsousa_mobile/widgets/wiget_post_item.dart';
 
 class CustomAppBar {
@@ -30,10 +29,7 @@ class CustomAppBar {
         underline: Container(),
         items: _itemsSeach(context),
         onChanged: (value) {},
-        selectedValueWidgetFn: (e) {
-          print('object');
-          Container();
-        },
+        selectedValueWidgetFn: (e) => Container(),
         icon: Icon(Icons.search, color: Theme.of(context).secondaryHeaderColor),
         searchFn: (String keyword, items) => _indexsSearchs(keyword),
       ),
