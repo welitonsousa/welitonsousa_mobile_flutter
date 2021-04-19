@@ -11,10 +11,10 @@ class ControllerAbountProfile extends ChangeNotifier {
 
   Profile _profile;
   bool _isLoading = false;
-  int get counterItems => _counterItems;
   GlobalKey<RefreshIndicatorState> get refreshKey => _refreshKey;
-  bool get isLoading => _isLoading;
   Profile get profile => _profile;
+  bool get isLoading => _isLoading;
+  int get counterItems => _counterItems;
 
   Future<void> getProfile() async {
     try {

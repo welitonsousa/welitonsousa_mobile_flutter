@@ -17,16 +17,8 @@ class _PagePostState extends State<PagePost> {
     return Scaffold(
       body: _body(post: post),
       appBar: CustomAppBar.material(title: post.data.title, context: context),
-      //appBar: _appBar(),
     );
   }
-
-/*   Widget _appBar(String title) {
-    return AppBar(
-      title: Text(title),
-      centerTitle: true,
-    );
-  } */
 
   Widget _body({ModelPost post}) {
     return ListView.builder(

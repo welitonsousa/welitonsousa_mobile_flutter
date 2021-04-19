@@ -3,12 +3,12 @@ import 'package:welitonsousa_mobile/helper/helper_dio_config.dart';
 import 'package:welitonsousa_mobile/models/model_posts_blog.dart';
 
 void main() {
-  test('MODEL: pots with blog -> response', () async {
-    final res = await dio.get('/posts');
+  test('MODEL: pots -> response', () async {
+    final res = await dio.get('/activities/posts');
     expect(res.data["success"], true);
   });
-  test('MODEL: pots with blog -> convert of type', () async {
-    final res = await dio.get('/posts');
+  test('MODEL: pots -> convert of type', () async {
+    final res = await dio.get('/activities/posts');
     try {
       List<ModelPost> posts = [];
       res.data["data"].forEach((e) {
