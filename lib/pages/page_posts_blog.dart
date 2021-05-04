@@ -29,7 +29,6 @@ class PagePostsBlog extends StatelessWidget {
     }
     if (ControllerPostsBlog.instance.isLoading) {
       return Loading.show();
-      String a;
     }
 
     return RefreshIndicator(

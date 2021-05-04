@@ -13,6 +13,7 @@ void main() {
       final res = await dio.get('/profile');
       if (res.data['success'] == true) {
         Profile profile = Profile.fromJson(res.data["data"]);
+        print(profile);
       }
     } catch (error) {
       throw new Exception('No convert type about');

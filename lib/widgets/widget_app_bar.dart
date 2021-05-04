@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:searchable_dropdown/searchable_dropdown.dart';
 import 'package:welitonsousa_mobile/controllers/controller_posts_blog.dart';
 import 'package:welitonsousa_mobile/models/model_posts_blog.dart';
-import 'package:welitonsousa_mobile/widgets/widget_snack_bar.dart';
 import 'package:welitonsousa_mobile/widgets/wiget_post_item.dart';
 
 class CustomAppBar {
