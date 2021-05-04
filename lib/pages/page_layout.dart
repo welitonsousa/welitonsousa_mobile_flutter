@@ -42,7 +42,8 @@ class _PageLayoutState extends State<PageLayout> {
       selectedIndex: ControllerLayout.instance.indexPage,
       onItemSelected: (index) {
         ControllerLayout.instance.setIndexPage(newPage: index);
-        ControllerLayout.instance.pageController.jumpToPage(index);
+        ControllerLayout.instance.pageController.animateToPage(index,
+            duration: Duration(milliseconds: 300), curve: Curves.ease);
       },
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       items: <BottomNavyBarItem>[

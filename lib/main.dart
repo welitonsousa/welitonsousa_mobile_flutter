@@ -30,11 +30,15 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    OneSignal.shared.init(Env.fireKey);
-    OneSignal.shared.setInFocusDisplayType(OSNotificationDisplayType.none);
-    OneSignal.shared.setNotificationReceivedHandler((notification) {
-      openNotification(notification);
-    });
+    final _platform = Theme.of(context).platform;
+    if (_platform == TargetPlatform.iOS ||
+        _platform == TargetPlatform.android) {
+      OneSignal.shared.init(Env.fireKey);
+      OneSignal.shared.setInFocusDisplayType(OSNotificationDisplayType.none);
+      OneSignal.shared.setNotificationReceivedHandler((notification) {
+        openNotification(notification);
+      });
+    }
 
     return AnimatedBuilder(
       animation: ControllerTheme.instance,
